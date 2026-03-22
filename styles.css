@@ -533,6 +533,34 @@ textarea:focus {
   min-height: 1.2rem;
 }
 
+.back-reference-button {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 250;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #fff;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.back-reference-button:hover {
+  transform: translateY(-2px);
+}
+
+.back-reference-button:focus-visible {
+  outline: 3px solid rgba(46, 229, 193, 0.45);
+  outline-offset: 2px;
+}
+
 .footer {
   border-top: 1px solid var(--border);
   padding: 3rem 0;
@@ -596,7 +624,7 @@ textarea:focus {
 
 .toast {
   position: fixed;
-  bottom: 2rem;
+  bottom: calc(max(1rem, env(safe-area-inset-bottom)) + 4.2rem);
   right: 2rem;
   background: rgba(24, 30, 52, 0.9);
   padding: 0.8rem 1.2rem;
